@@ -1,0 +1,21 @@
+@use 'colors' as *;
+@use 'sizes' as *;
+@use 'sass:map';
+
+@function clr($color, $shade){
+  @if map.has-key($colors, $color, $shade){
+    @return map.get($colors, $color, $shade);
+  } @else{
+    @error '$colors does not have color!'; 
+  }
+}
+
+
+@function size($size){
+  @if map.has-key($sizes, $size){
+    @return map.get($sizes, $size);
+  } @else{
+    @error '$sizes does not have size!'; 
+  }
+}
+
